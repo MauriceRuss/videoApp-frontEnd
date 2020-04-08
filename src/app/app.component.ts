@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'fullStack-frontEnd';
+  title = 'VidStack';
+  appName = 'VidStack';
+  selectedFile = null;
+
+  constructor(private http: HttpClient) {}
+
+  onFilesSelected(event) {
+    this.selectedFile = event.target.files[0];
+  }
+
+  onUpload() {
+/*
+    this.http.post('url of webserver that is taking the video.')
+*/
+  }
 }
